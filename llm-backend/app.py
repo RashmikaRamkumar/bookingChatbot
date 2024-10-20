@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Body, HTTPException
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import transformers
@@ -83,6 +84,6 @@ async def message(request: ValidateRequest):
         user_message = request.message
         system_message = request.system_message
         response = query_model(system_message, user_id, user_message)
-        return {"response": response}
+        return JSONResponse(status_code=200,content={"response": response})
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
