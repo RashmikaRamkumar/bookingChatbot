@@ -33,8 +33,8 @@ pipeline = transformers.pipeline(
     device_map="auto"
 )
 
-ngrok.set_auth_token("2nhmvPpU105ZxcSRHJ0SIXLmWf2_6DgZtD3NGeo8ygs9BW8AB")
-listener = ngrok.forward("127.0.0.1:8000", authtoken_from_env=True, domain="eminently-unified-mudfish.ngrok-free.app")
+ngrok.set_auth_token("2dVBJw5G2bExzQ41keUUDtC0U8K_7zn55apnGM8YJ3RNsfznb")
+listener = ngrok.forward("127.0.0.1:8000", authtoken_from_env=True, domain="glowing-polite-porpoise.ngrok-free.app")
 
 conversation_history = {}
 
